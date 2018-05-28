@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1527353885 source:d:\dut\hoc ky 8\da csnm\polist-notation--v2\main.c
+1527354456 source:d:\dut\hoc ky 8\da csnm\polist-notation--v2\main.c
 	"balan.h"
 	<stdio.h>
 	<conio.h>
 
-1527353290 d:\dut\hoc ky 8\da csnm\polist-notation--v2\balan.h
+1527354374 d:\dut\hoc ky 8\da csnm\polist-notation--v2\balan.h
 	<stdio.h>
 	<math.h>
 	"util.h"
