@@ -1,11 +1,35 @@
-#include "balan.h"
 #include <stdio.h>
-#include<conio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include "pipe.h"
 
 int main() {
-  char str[] = "((15 / (7 - (1 + 1))) * 3) - (2 + (1 + 1)) + cos(60) + sin(30)";
-//  double res = calculator(str);
-  printf(">> %s = %f", str, calculator(str));
-  getch();
-  return 0;
+  int data_pipes[2];
+  int pid;
+  int rc;
+
+  rc = pipe(data_pipes);
+  if(rc == -1) {
+    perror("Pipe not created!");
+    exit(1);
+  }
+
+  pid = fork();
+  switch(pid) {
+    case -1: {
+      perror("Child process not created!");
+      exit(1);
+    }
+
+    case 0: {
+      doChild(data_pipes);
+    }
+
+    default: {
+      doParent(data_pipes);
+    }
+  }
 }

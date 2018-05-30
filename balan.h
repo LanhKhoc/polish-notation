@@ -1,9 +1,7 @@
 #ifndef BALAN_H_INCLUDED
 #define BALAN_H_INCLUDED
 
-#include <stdio.h>
 #include <math.h>
-#include "util.h"
 
 const int ENV = 0;
 const int DEVELOP = 1;
@@ -76,7 +74,7 @@ char* processInput(char *sMath) {
   char *result = calloc(MAX_STR, sizeof (char));
 	char *tmp = calloc(MAX_STR, sizeof (char));
 	int iTmp = 0;
-	if (ENV == DEVELOP) { printf("\n\n\t>> processInput len %s: %d\n\n", sMath, strlen(sMath)); }
+	// if (ENV == DEVELOP) { printf("\n\n\t>> processInput len %s: %d\n\n", sMath, strlen(sMath)); }
 
 	// NOTE: From sMath[] ---> elementMath[][]
 	// "11+2.5" ---> elementMath[0] = "11", elementMath[1] = "2.5"
@@ -266,10 +264,10 @@ double calculator(char *math) {
     printf("\n\n\t>> valueMath: %f\n", result);
 	}
 
-	free(sMath);
-	free(pMath);
-	free(smMath);
-	free(postfixMath);
+	// free(sMath);
+	// free(pMath);
+	// free(smMath);
+	// free(postfixMath);
 
 	return result;
 }
